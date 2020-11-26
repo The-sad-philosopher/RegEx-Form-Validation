@@ -1,9 +1,26 @@
+$font-color:#292929
+
 =flex-center($flex-direction: row)
   display: flex
   justify-content: center
   align-items: center
   flex-direction: $flex-direction
+
+=set-bg($location)
+  background: url($location) center center
+  background-size: cover
+
+=position-pseudo-elements
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
   
+=ease-in($time: 0.3s)
+  transition: ease-in $time
+
 *,
 *::before,
 *::after
@@ -13,14 +30,11 @@
 
 body
   +flex-center(column)
+  +set-bg('img/bg.jpeg')
   min-height: 100vh
-  background: url(img/bg.jpeg)
-  background-size: cover
-  background-position: center center
   background-attachment: fixed
   font-family: ubuntu 
-  color: #292929  
-  opacity: 0.9
+  color: $font-color 
 
 .container
   +flex-center
@@ -33,12 +47,7 @@ body
   text-align: center
 
   &::before
-    content: ''
-    position: absolute
-    top:0
-    left: 0
-    right: 0
-    bottom: 0
+    +position-pseudo-elements
     box-shadow: inset 0 0 3000px #00000085
     background: inherit
     filter: blur(50px)
@@ -61,17 +70,17 @@ form
     padding: 1.3rem
     margin-top: 1rem
     border:  none
-    background: #0c1118
+    background: #070707
     border-radius: 7px
     color: #ffffffd2
     text-transform: uppercase
     font-weight: bold
     cursor: pointer
-    transition: 0.1s ease-in
+    +ease-in(0.1s)
 
     &:hover,
     &:focus
-      background: #000
+      background: #1b1b1b
       outline: none
 
   input
@@ -81,6 +90,7 @@ form
     border: none
     padding: 1rem
     border-radius: 7px
+    +ease-in(0.1s)
 
     &:focus
       background: #e6e6e650
@@ -91,7 +101,7 @@ form
     display: none
     font-size: 0.9rem
     padding: 1rem
-    color: #ffffffbe
+    color: #ffffffd2
 
   input.invalid
     border: 1px solid red
