@@ -1,0 +1,103 @@
+=flex-center($flex-direction: row)
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: $flex-direction
+  
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  +flex-center(column)
+  min-height: 100vh
+  background: url(img/bg.jpeg)
+  background-size: cover
+  background-position: center center
+  background-attachment: fixed
+  font-family: ubuntu 
+  color: #292929  
+  opacity: 0.9
+
+.container
+  +flex-center
+  position: relative
+  background: inherit
+  z-index: 1
+  overflow: hidden
+  width: 40rem
+  padding: 1rem 4rem
+  text-align: center
+
+  &::before
+    content: ''
+    position: absolute
+    top:0
+    left: 0
+    right: 0
+    bottom: 0
+    box-shadow: inset 0 0 3000px #00000085
+    background: inherit
+    filter: blur(50px)
+    z-index: 2
+
+form
+  +flex-center(column)
+  flex: 1
+  margin: 2rem
+  position: relative
+  z-index: 3
+  min-height: 35rem
+  justify-content: space-between
+  align-items: stretch
+
+  h1
+    margin: 1rem 0
+
+  button
+    padding: 1.3rem
+    margin-top: 1rem
+    border:  none
+    background: #0c1118
+    border-radius: 7px
+    color: #ffffffd2
+    text-transform: uppercase
+    font-weight: bold
+    cursor: pointer
+    transition: 0.1s ease-in
+
+    &:hover,
+    &:focus
+      background: #000
+      outline: none
+
+  input
+    display: block
+    width: 100%
+    background: #cecece50
+    border: none
+    padding: 1rem
+    border-radius: 7px
+
+    &:focus
+      background: #e6e6e650
+      border: 1px solid #ffffffbe
+      outline: none
+  
+  input + label
+    display: none
+    font-size: 0.9rem
+    padding: 1rem
+    color: #ffffffbe
+
+  input.invalid
+    border: 1px solid red
+
+  input.invalid + label
+    display: block
+
+  input.valid
+    border: 1px solid green

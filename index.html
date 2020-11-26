@@ -1,30 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>RegEx Form</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8" />
+    <title>RegEx Form</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
         <h1>New User Signup</h1>
-        <form>
+        <div>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            autocomplete="off"
+          />
+          <label for="username"
+            >Username must be alphanumeric and contain 5 - 12 characters</label
+          >
+        </div>
 
-            <input type="text" name="username" placeholder="username">
-            <p>Username must be  and contain 5 - 12 characters</p>
+        <div>
+          <input
+            type="text"
+            name="email"
+            placeholder="email"
+            autocomplete="off"
+          />
+          <label for="email"
+            >Email must be a valid address, e.g. me@mydomain.com</label
+          >
+        </div>
 
-            <input type="text" name="email" placeholder="email">
-            <p>Email must be a valid address, e.g. me@mydomain.com</p>
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            autocomplete="off"
+          />
+          <label for="password">
+            Password must alphanumeric (@, _ and - are also allowed) and be 8 -
+            20 characters
+          </label>
+        </div>
 
-            <input type="password" name="password" placeholder="password">
-            <p>Password must alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
+        <div>
+          <input
+            type="text"
+            name="telephone"
+            placeholder="telephone"
+            autocomplete="off"
+          />
+          <label for="telephone"
+            >Telephone must be a valid UK telephone number (11 digits)</label
+          >
+        </div>
 
-            <input type="text" name="telephone" placeholder="telephone">
-            <p>Telephone must be a valid UK telephone number (11 digits)</p>
-
-            <input type="text" name="slug" placeholder="profile slug">
-            <p>Slug must contain only lowercase letters, numbers and hyphens and be 8 - 20 characters</p>
-
-        </form>
-        <script type="text/javascript" src="validation.js"></script>
-    </body>
+        <div>
+          <input
+            type="text"
+            name="slug"
+            placeholder="profile slug"
+            autocomplete="off"
+          />
+          <label for="slug">
+            Slug must contain only lowercase letters, numbers and hyphens and be
+            8 - 20 characters
+          </label>
+        </div>
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <script type="text/javascript" src="validation.js"></script>
+  </body>
 </html>
